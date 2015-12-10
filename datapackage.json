@@ -1,0 +1,61 @@
+{
+  "name": "EU-Emissions-Trading-System",
+  "title": "European Union Emissions Trading System (EU ETS) data from EUTL",
+  "description": "Data about the EU emission trading system (ETS). The EU ETS data viewer provides aggregated data on emissions and allowances, by country, sector and year. The data mainly comes from the EU Transaction Log (EUTL). Additional information on auctioning and scope corrections is included. ",
+  "homepage": "http://www.eea.europa.eu/data-and-maps/data/european-union-emissions-trading-scheme-eu-ets-data-from-citl-7/",
+  "version": "19",
+  "license": "ODC-PDDL-1.0",
+  "sources": [
+    {
+      "name": "EU ETS data",
+      "web": "http://www.eea.europa.eu/data-and-maps/data/european-union-emissions-trading-scheme-eu-ets-data-from-citl-7/eu-ets-data-download-latest-version/citl_v19.zip/at_download/file"
+    }
+  ],
+  "resources": [
+    {
+      "name": "eu-ets",
+      "path": "data/eu-ets.csv",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "schema": {
+        "fields": [
+          {
+            "name": "country_code",
+            "type": "string",
+            "description": "International Country Code (ISO 3166-1-Alpha-2 code elements)"
+          },
+          {
+            "name": "country",
+            "type": "string",
+            "description": "Country name"
+          },
+          {
+            "name": "main activity sector name",
+            "type": "string",
+            "description": "Main activity label"
+          },
+          {
+            "name": "ETS information",
+            "type": "string",
+            "description": "ETS information"
+          },
+          {
+            "name": "year",
+            "type": "date",
+            "description": "Annual data (YYYY)"
+          },
+          {
+            "name": "value",
+            "type": "number",
+            "description": "measure value"
+          },
+          {
+            "name": "unit",
+            "type": "string",
+            "description": "Unit of the measure value (in tonne of CO2-equ.)"
+          }
+        ]
+      }
+    }
+  ]
+}
