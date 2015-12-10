@@ -24,6 +24,10 @@ Data about the EU emission trading system (ETS). The EU emission trading system 
 
 ## Data Preparation
 
+### Requirements
+
+Python 2 together with modules urllib and zipfile are required in order to process the data. 
+
 ### Processing
 
 Run the following script from this directory to download and process the data:
