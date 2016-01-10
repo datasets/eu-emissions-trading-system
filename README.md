@@ -41,12 +41,11 @@ The raw data are output to `./tmp`. The processed data are output to `./data`.
 ### Data
 
 Data are sourced from European Environment Agency and no copyright restrictions are applied. More specifically:
-
 > EEA aspires to promote the sharing of environmental data. In agreeing to share, data providers need to have assurance that their data are properly handled, disseminated and acknowledged following similar principles and rules across countries and stakeholders.[*][permissions]
 
 ### Additional work
 
-> All the additional work done to build this Data Package is made available under the Public Domain Dedication and License v1.0 whose full text can be found at: http://www.opendatacommons.org/licenses/pddl/1.0/
+All the additional work done to build this Data Package is made available under the Public Domain Dedication and License v1.0 whose full text can be found at: http://www.opendatacommons.org/licenses/pddl/1.0/
 
 
 ### Citations
