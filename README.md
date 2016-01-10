@@ -2,19 +2,15 @@ Data about the EU emission trading system (ETS). The EU emission trading system 
 
 ## Data
 
-### Description
-
-> The EU ETS data viewer provides aggregated data on emissions and allowances, by country, sector and year. 
+Aggregated data on greenhouse gas emissions and allowances. 
 
 ### Geographic coverage
-> Austria, Belgium, Bulgaria, Croatia, Cyprus, Czech Republic, Denmark, Estonia, Finland, France, Germany, Greece, Hungary, Iceland, Ireland, Italy, Latvia, Liechtenstein, Lithuania, Luxembourg, Malta, Netherlands, Norway, Poland, Portugal, Romania, Slovakia, Slovenia, Spain, Sweden, United Kingdom
+
+Austria, Belgium, Bulgaria, Croatia, Cyprus, Czech Republic, Denmark, Estonia, Finland, France, Germany, Greece, Hungary, Iceland, Ireland, Italy, Latvia, Liechtenstein, Lithuania, Luxembourg, Malta, Netherlands, Norway, Poland, Portugal, Romania, Slovakia, Slovenia, Spain, Sweden, United Kingdom
 
 ### Temporal coverage
-> 2005-2014
 
-### Citations
-
-1. EEA standard re-use policy: unless otherwise indicated, re-use of content on the EEA website for commercial or non-commercial purposes is permitted free of charge, provided that the source is acknowledged (http://www.eea.europa.eu/legal/copyright). Copyright holder: Directorate-General for Climate Action (DG-CLIMA).
+2005-2014
 
 ### Sources
 
@@ -42,7 +38,19 @@ The raw data are output to `./tmp`. The processed data are output to `./data`.
 
 ## License
 
-### ODC-PDDL-1.0
+### Data
 
-This Data Package is made available under the Public Domain Dedication and License v1.0 whose full text can be found at: http://www.opendatacommons.org/licenses/pddl/1.0/
+Data are sourced from European Environment Agency and no copyright restrictions are applied. More specifically:
 
+> EEA aspires to promote the sharing of environmental data. In agreeing to share, data providers need to have assurance that their data are properly handled, disseminated and acknowledged following similar principles and rules across countries and stakeholders.[*][permissions]
+
+### Additional work
+
+> All the additional work done to build this Data Package is made available under the Public Domain Dedication and License v1.0 whose full text can be found at: http://www.opendatacommons.org/licenses/pddl/1.0/
+
+
+### Citations
+
+1. EEA standard re-use policy: unless otherwise indicated, re-use of content on the EEA website for commercial or non-commercial purposes is permitted free of charge, provided that the source is acknowledged (http://www.eea.europa.eu/legal/copyright). Copyright holder: Directorate-General for Climate Action (DG-CLIMA).
+
+[permissions]: http://www.eea.europa.eu/legal/eea-data-policy
