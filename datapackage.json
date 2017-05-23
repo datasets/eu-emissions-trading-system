@@ -41,8 +41,8 @@
           },
           {
             "name": "year",
-            "type": "date",
-            "description": "Annual data (YYYY)"
+            "type": "string",
+            "description": "Annual data mainly in YYYY format, but also may include stings Eg: Total 1st trading period (05-07)"
           },
           {
             "name": "value",
