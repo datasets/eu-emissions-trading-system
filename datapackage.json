@@ -8,7 +8,8 @@
   "sources": [
     {
       "name": "EU ETS data",
-      "web": "http://www.eea.europa.eu/data-and-maps/data/european-union-emissions-trading-scheme-eu-ets-data-from-citl-7/eu-ets-data-download-latest-version/citl_v19.zip/at_download/file"
+      "path": "http://www.eea.europa.eu/data-and-maps/data/european-union-emissions-trading-scheme-eu-ets-data-from-citl-7/eu-ets-data-download-latest-version/citl_v19.zip/at_download/file",
+      "title": "EU ETS data"
     }
   ],
   "resources": [
