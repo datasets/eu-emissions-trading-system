@@ -2,7 +2,7 @@ meta:
   dataset: eu-emissions-trading-system
   findability: public
   # username and userid could be found in ~/.config/datahub/config.json
-  owner: core
+  owner: AcckiyGerman
   ownerid: a08d3588fbae0355042537595c65819d
 
 inputs:
@@ -65,11 +65,11 @@ inputs:
 processing:
   -
     input: data-source
-
     tabulator:
       -
         compression: zip
+
     output: data-source
 
 # how often to run the automation?
-schedule: 'every 1y'
+schedule: every 365d

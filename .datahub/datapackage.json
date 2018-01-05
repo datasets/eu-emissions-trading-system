@@ -18,6 +18,7 @@
       "path": "data/eu-ets.csv",
       "format": "csv",
       "mediatype": "text/csv",
+      "compression": "zip",
       "schema": {
         "fields": [
           {
