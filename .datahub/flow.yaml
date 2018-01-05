@@ -2,8 +2,8 @@ meta:
   dataset: eu-emissions-trading-system
   findability: public
   # username and userid could be found in ~/.config/datahub/config.json
-  owner: AcckiyGerman
-  ownerid: a08d3588fbae0355042537595c65819d
+  owner: core
+  ownerid: core
 
 inputs:
   -
