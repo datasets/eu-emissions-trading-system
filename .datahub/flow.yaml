@@ -18,6 +18,7 @@ inputs:
         homepage: http://www.eea.europa.eu/data-and-maps/data/european-union-emissions-trading-scheme-eu-ets-data-from-citl-7/
         version: 19
         license: ODC-PDDL-1.0
+        source: http://www.eea.europa.eu/data-and-maps/data/european-union-emissions-trading-scheme-eu-ets-data-from-citl-7/eu-ets-data-download-latest-version/citl_v19.zip/at_download/file
         # this section should match the source data structure
         # use datapackage-py infer method to get this in json format
         resources:
@@ -66,9 +67,7 @@ processing:
   -
     input: data-source
     tabulator:
-      -
-        compression: zip
-
+      compression: zip
     output: data-source
 
 # how often to run the automation?

@@ -1,5 +1,3 @@
-#import csv
-#import os
 import urllib
 import zipfile
 import csv
@@ -11,12 +9,14 @@ eu-ets-data-download-latest-version/citl_v"+version+".zip/at_download/file"
 zip = 'tmp/citl.zip'
 csvfile = 'tmp/CITL_v'+version+'.csv'
 out_path = 'data/eu-ets.csv'
+
+
 def execute():
-    print 'Trying to download from path:'
-    print source
+    print('Trying to download from path:')
+    print(source)
     urllib.urlretrieve(source, zip)
 
-    with zipfile.ZipFile(zip,'r') as z:
+    with zipfile.ZipFile(zip, 'r') as z:
         z.extractall('tmp/')
 
     with open(csvfile, 'r') as infile, open(out_path,'w') as outfile:
