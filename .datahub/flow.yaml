@@ -13,7 +13,7 @@ inputs:
     parameters:
       descriptor:
         # this name will be used in the next steps
-        name: data-source
+        name: eu-ets
         title: European Union Emissions Trading System (EU ETS) data from EUTL
         homepage: http://www.eea.europa.eu/data-and-maps/data/european-union-emissions-trading-scheme-eu-ets-data-from-citl-7/
         version: 19
@@ -23,7 +23,7 @@ inputs:
         # use datapackage-py infer method to get this in json format
         resources:
           -
-            name: data-source
+            name: eu-ets
             path: data/eu-ets.csv
             format: csv
             mediatype: text/csv
@@ -60,15 +60,15 @@ inputs:
 
       resource-mapping:
         # the link to original data-source file
-        data-source: http://www.eea.europa.eu/data-and-maps/data/european-union-emissions-trading-scheme-eu-ets-data-from-citl-7/eu-ets-data-download-latest-version/citl_v19.zip/at_download/file
+        eu-ets: http://www.eea.europa.eu/data-and-maps/data/european-union-emissions-trading-scheme-eu-ets-data-from-citl-7/eu-ets-data-download-latest-version/citl_v19.zip/at_download/file
 
 # this part describes what to do with data, how to 'process' it
 processing:
   -
-    input: data-source
+    input: eu-ets
     tabulator:
       compression: zip
-    output: data-source
+    output: eu-ets
 
 # how often to run the automation?
 schedule: every 365d
