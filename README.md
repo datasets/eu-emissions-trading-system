@@ -18,7 +18,7 @@ Austria, Belgium, Bulgaria, Croatia, Cyprus, Czech Republic, Denmark, Estonia, F
   * Name: European Union Emissions Trading System data from EUTL
   * Web: http://www.eea.europa.eu/data-and-maps/data/european-union-emissions-trading-scheme-eu-ets-data-from-citl-7
 
-## Data Preparation
+## Preparation
 
 ### Requirements
 
