@@ -25,7 +25,7 @@ inputs:
         resources:
           -
             name: eu-ets
-            path: data/eu-ets.csv
+            path: data/eu-ets.zip
             format: csv
             mediatype: text/csv
             "schema":
