@@ -16,25 +16,27 @@ Austria, Belgium, Bulgaria, Croatia, Cyprus, Czech Republic, Denmark, Estonia, F
 
 1. 
   * Name: European Union Emissions Trading System data from EUTL
-  * Web: http://www.eea.europa.eu/data-and-maps/data/european-union-emissions-trading-scheme-eu-ets-data-from-citl-7
+  * Web: https://www.eea.europa.eu/en/datahub/datahubitem-view/98f04097-26de-4fca-86c4-63834818c0c0
 
 ## Preparation
 
 ### Requirements
 
-Python 2 together with modules urllib and zipfile are required in order to process the data. 
+Python 3 with modules requests  are required in order to process the data. 
 
 ### Processing
 
 Run the following script from this directory to download and process the data:
 
 ```bash
-make
+pip install -r scripts/requirements.txt
+# run the following
+python scripts/process.py
 ```
 
 ### Resources
 
-The raw data are output to `./tmp`. The processed data are output to `./data`.
+The processed data are output to `./data`.
 
 ## License
 
