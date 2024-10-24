@@ -1,3 +1,5 @@
+<a href="https://datahub.io/core/eu-emissions-trading-system"><img src="https://badgen.net/badge/icon/View%20on%20datahub.io/orange?icon=https://datahub.io/datahub-cube-badge-icon.svg&label&scale=1.25)" alt="badge" /></a>
+
 Data about the EU emission trading system (ETS). The EU emission trading system (ETS) is one of the main measures introduced by the EU to achieve cost-efficient reductions of greenhouse gas emissions and reach its targets under the Kyoto Protocol and other commitments. The data mainly comes from the EU Transaction Log (EUTL).
 
 ## Data
