@@ -18,7 +18,6 @@ sector,year,emissions_mt
 20 Combustion of fuels,2021,820.43
 20 Combustion of fuels,2022,828.36
 20 Combustion of fuels,2023,651.21
-20 Combustion of fuels,2024,0.0
 29 Production of cement clinker,2005,149.98
 29 Production of cement clinker,2006,153.78
 29 Production of cement clinker,2007,172.68
@@ -38,7 +37,6 @@ sector,year,emissions_mt
 29 Production of cement clinker,2021,112.62
 29 Production of cement clinker,2022,105.69
 29 Production of cement clinker,2023,95.73
-29 Production of cement clinker,2024,0.0
 24  Production of pig iron or steel,2005,133.44
 24  Production of pig iron or steel,2006,138.79
 24  Production of pig iron or steel,2007,149.02
@@ -58,7 +56,6 @@ sector,year,emissions_mt
 24  Production of pig iron or steel,2021,113.08
 24  Production of pig iron or steel,2022,102.59
 24  Production of pig iron or steel,2023,94.26
-24  Production of pig iron or steel,2024,0.0
 21  Refining of mineral oil,2005,131.92
 21  Refining of mineral oil,2006,130.78
 21  Refining of mineral oil,2007,135.36
@@ -78,7 +75,6 @@ sector,year,emissions_mt
 21  Refining of mineral oil,2021,102.38
 21  Refining of mineral oil,2022,109.39
 21  Refining of mineral oil,2023,105.48
-21  Refining of mineral oil,2024,0.0
 10 Aviation,2005,0.0
 10 Aviation,2006,0.0
 10 Aviation,2007,0.0
@@ -98,7 +94,6 @@ sector,year,emissions_mt
 10 Aviation,2021,27.68
 10 Aviation,2022,48.72
 10 Aviation,2023,53.23
-10 Aviation,2024,0.0
 42 Production of bulk chemicals,2005,11.55
 42 Production of bulk chemicals,2006,11.94
 42 Production of bulk chemicals,2007,12.64
@@ -118,7 +113,6 @@ sector,year,emissions_mt
 42 Production of bulk chemicals,2021,34.92
 42 Production of bulk chemicals,2022,29.95
 42 Production of bulk chemicals,2023,27.17
-42 Production of bulk chemicals,2024,0.0
 "30 Production of lime, or calcination of dolomite/magnesite",2005,30.88
 "30 Production of lime, or calcination of dolomite/magnesite",2006,30.46
 "30 Production of lime, or calcination of dolomite/magnesite",2007,32.77
@@ -138,7 +132,6 @@ sector,year,emissions_mt
 "30 Production of lime, or calcination of dolomite/magnesite",2021,26.4
 "30 Production of lime, or calcination of dolomite/magnesite",2022,24.39
 "30 Production of lime, or calcination of dolomite/magnesite",2023,21.4
-"30 Production of lime, or calcination of dolomite/magnesite",2024,0.0
 36 Production of paper or cardboard,2005,25.99
 36 Production of paper or cardboard,2006,25.98
 36 Production of paper or cardboard,2007,25.53
@@ -158,4 +151,3 @@ sector,year,emissions_mt
 36 Production of paper or cardboard,2021,19.21
 36 Production of paper or cardboard,2022,17.12
 36 Production of paper or cardboard,2023,14.38
-36 Production of paper or cardboard,2024,0.0

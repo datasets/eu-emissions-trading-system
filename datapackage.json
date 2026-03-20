@@ -31,7 +31,7 @@
         "marginRight": 20,
         "x": {
           "label": "Year",
-          "tickFormat": "d"
+          "tickFormat": ".0f"
         },
         "y": {
           "label": "Verified Emissions (Mt CO₂ equiv.)",
