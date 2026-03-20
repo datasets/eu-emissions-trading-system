@@ -18,7 +18,82 @@
       "title": "EU ETS data"
     }
   ],
+  "views": [
+    {
+      "name": "sector-emissions-trajectory",
+      "title": "EU ETS Emissions by Sector (2005–2024)",
+      "description": "Verified greenhouse gas emissions for the top 8 industrial sectors in the EU Emissions Trading System. Combustion of fuels dominates at over 1 Gt/yr but has fallen ~35% since 2008. Other sectors — cement, steel, refining — each contribute 20–150 Mt and show similar declining trends since Phase III tightening began in 2013.",
+      "resources": ["eu-ets-sector-emissions"],
+      "specType": "plot",
+      "spec": {
+        "height": 460,
+        "marginLeft": 65,
+        "marginRight": 20,
+        "x": {
+          "label": "Year",
+          "tickFormat": "d"
+        },
+        "y": {
+          "label": "Verified Emissions (Mt CO₂ equiv.)",
+          "grid": true
+        },
+        "color": {
+          "legend": true
+        },
+        "marks": [
+          {
+            "type": "ruleY",
+            "staticData": [{ "y": 0 }],
+            "y": "y",
+            "stroke": "#e5e7eb"
+          },
+          {
+            "type": "line",
+            "x": "year",
+            "y": "emissions_mt",
+            "stroke": "sector",
+            "strokeWidth": 2,
+            "tip": true
+          },
+          {
+            "type": "dot",
+            "x": "year",
+            "y": "emissions_mt",
+            "stroke": "sector",
+            "fill": "sector",
+            "r": 2,
+            "tip": false
+          }
+        ]
+      }
+    }
+  ],
   "resources": [
+    {
+      "name": "eu-ets-sector-emissions",
+      "path": "data/eu-ets-sector-emissions.csv",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "schema": {
+        "fields": [
+          {
+            "name": "sector",
+            "type": "string",
+            "description": "Main activity sector name"
+          },
+          {
+            "name": "year",
+            "type": "integer",
+            "description": "Year"
+          },
+          {
+            "name": "emissions_mt",
+            "type": "number",
+            "description": "Verified emissions in megatonnes of CO₂ equivalent"
+          }
+        ]
+      }
+    },
     {
       "name": "eu-ets",
       "path": "data/eu-ets.csv",
