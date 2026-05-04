@@ -21,9 +21,11 @@
   "views": [
     {
       "name": "sector-emissions-trajectory",
-      "title": "EU ETS Emissions by Sector (2005–2024)",
-      "description": "Verified greenhouse gas emissions for the top 8 industrial sectors in the EU Emissions Trading System. Combustion of fuels dominates at over 1 Gt/yr but has fallen ~35% since 2008. Other sectors — cement, steel, refining — each contribute 20–150 Mt and show similar declining trends since Phase III tightening began in 2013.",
-      "resources": ["eu-ets-sector-emissions"],
+      "title": "EU ETS Emissions by Sector (2005\u20132024)",
+      "description": "Verified greenhouse gas emissions for the top 8 industrial sectors in the EU Emissions Trading System. Combustion of fuels dominates at over 1 Gt/yr but has fallen ~35% since 2008. Other sectors \u2014 cement, steel, refining \u2014 each contribute 20\u2013150 Mt and show similar declining trends since Phase III tightening began in 2013.",
+      "resources": [
+        "eu-ets-sector-emissions"
+      ],
       "specType": "plot",
       "spec": {
         "height": 460,
@@ -34,7 +36,7 @@
           "tickFormat": ".0f"
         },
         "y": {
-          "label": "Verified Emissions (Mt CO₂ equiv.)",
+          "label": "Verified Emissions (Mt CO\u2082 equiv.)",
           "grid": true
         },
         "color": {
@@ -43,7 +45,11 @@
         "marks": [
           {
             "type": "ruleY",
-            "staticData": [{ "y": 0 }],
+            "staticData": [
+              {
+                "y": 0
+              }
+            ],
             "y": "y",
             "stroke": "#e5e7eb"
           },
@@ -89,10 +95,11 @@
           {
             "name": "emissions_mt",
             "type": "number",
-            "description": "Verified emissions in megatonnes of CO₂ equivalent"
+            "description": "Verified emissions in megatonnes of CO\u2082 equivalent"
           }
         ]
-      }
+      },
+      "description": "Annual EU ETS total verified emissions aggregated by sector and year, measured in megatonnes of CO2 equivalent."
     },
     {
       "name": "eu-ets",
@@ -137,7 +144,8 @@
             "description": "Unit of the measure value (in tonne of CO2-equ.)"
           }
         ]
-      }
+      },
+      "description": "EU Emissions Trading System verified emission data by country, sector, and year, measured in tonnes of CO2 equivalent."
     }
   ],
   "collection": "air-pollution"
