@@ -14,8 +14,8 @@
   "sources": [
     {
       "name": "EU ETS data",
-      "path": "http://www.eea.europa.eu/data-and-maps/data/european-union-emissions-trading-scheme-eu-ets-data-from-citl-7/eu-ets-data-download-latest-version/citl_v19.zip/at_download/file",
-      "title": "EU ETS data"
+      "path": "https://www.eea.europa.eu/en/datahub/datahubitem-view/98f04097-26de-4fca-86c4-63834818c0c0",
+      "title": "EU ETS data from EUTL (European Environment Agency)"
     }
   ],
   "views": [
@@ -74,6 +74,7 @@
       "path": "data/eu-ets-sector-emissions.csv",
       "format": "csv",
       "mediatype": "text/csv",
+      "description": "Aggregated EU ETS verified greenhouse gas emissions by main activity sector and year, derived from the eu-ets resource. Values are in megatonnes of CO₂ equivalent and cover the top emitting sectors from 2005 onwards.",
       "schema": {
         "fields": [
           {
@@ -83,8 +84,8 @@
           },
           {
             "name": "year",
-            "type": "integer",
-            "description": "Year"
+            "type": "year",
+            "description": "Reporting year (YYYY)"
           },
           {
             "name": "emissions_mt",
@@ -99,6 +100,7 @@
       "path": "data/eu-ets.csv",
       "format": "csv",
       "mediatype": "text/csv",
+      "description": "Country- and sector-level EU ETS data downloaded from the EU Transaction Log (EUTL) via the European Environment Agency. Each row reports a single ETS metric (e.g. verified emissions, freely allocated allowances) for one country, activity sector, and time period. The `year` field contains both four-digit calendar years (e.g. `2013`) and named trading-period strings (e.g. `Total 1st trading period (05-07)`).",
       "schema": {
         "fields": [
           {
