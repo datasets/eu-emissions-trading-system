@@ -12,7 +12,7 @@ Austria, Belgium, Bulgaria, Croatia, Cyprus, Czech Republic, Denmark, Estonia, F
 
 ### Temporal coverage
 
-2005-2024
+2005-2025
 
 ### Sources
 

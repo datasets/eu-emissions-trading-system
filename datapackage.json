@@ -16,12 +16,17 @@
       "name": "EU ETS data",
       "path": "https://www.eea.europa.eu/en/datahub/datahubitem-view/98f04097-26de-4fca-86c4-63834818c0c0",
       "title": "EU ETS data from EUTL (European Environment Agency)"
+    },
+    {
+      "name": "Country codes",
+      "path": "https://github.com/datasets/country-codes",
+      "title": "Country codes (used to map ISO 3166-1 alpha-2 codes to country names)"
     }
   ],
   "views": [
     {
       "name": "sector-emissions-trajectory",
-      "title": "EU ETS Emissions by Sector (2005–2024)",
+      "title": "EU ETS Emissions by Sector (2005–2025)",
       "description": "Verified greenhouse gas emissions for the top 8 industrial sectors in the EU Emissions Trading System. Combustion of fuels dominates at over 1 Gt/yr but has fallen ~35% since 2008. Other sectors — cement, steel, refining — each contribute 20–150 Mt and show similar declining trends since Phase III tightening began in 2013.",
       "resources": ["eu-ets-sector-emissions"],
       "specType": "plot",
@@ -100,43 +105,43 @@
       "path": "data/eu-ets.csv",
       "format": "csv",
       "mediatype": "text/csv",
-      "description": "Country- and sector-level EU ETS data downloaded from the EU Transaction Log (EUTL) via the European Environment Agency. Each row reports a single ETS metric (e.g. verified emissions, freely allocated allowances) for one country, activity sector, and time period. The `year` field contains both four-digit calendar years (e.g. `2013`) and named trading-period strings (e.g. `Total 1st trading period (05-07)`).",
+      "description": "Country- and sector-level EU ETS data from the EU Transaction Log (EUTL) via the European Environment Agency. Each row reports a single ETS metric (e.g. verified emissions, freely allocated allowances) for one country, activity sector, and time period. The `year` field contains both four-digit calendar years (e.g. `2013`) and named trading-period strings (e.g. `Total 1st trading period (05-07)`). Country names are resolved from ISO 3166-1 alpha-2 codes using the country-codes dataset; non-country rows (EU-level funds and mechanisms) use descriptive names.",
       "schema": {
         "fields": [
           {
             "name": "country_code",
             "type": "string",
-            "description": "International Country Code (ISO 3166-1-Alpha-2 code elements)"
+            "description": "ISO 3166-1 alpha-2 country code, or a special ETS administrative code for EU-level mechanisms (XI = Northern Ireland, Innovation fund, Modernisation Fund, NER 300 auctions, RRF)"
           },
           {
             "name": "country",
             "type": "string",
-            "description": "Country name"
+            "description": "Country name in English, or the name of the EU-level administrative mechanism for non-country rows"
           },
           {
-            "name": "main activity sector name",
+            "name": "main_activity_code",
             "type": "string",
-            "description": "Main activity label"
+            "description": "ETS main activity sector code (e.g. 20 = Combustion of fuels, 21 = Refining of mineral oil, 29 = Production of cement clinker). Aggregate codes ending in -99 (e.g. 20-99) cover multiple sectors."
           },
           {
-            "name": "ETS information",
+            "name": "citl_information",
             "type": "string",
-            "description": "ETS information"
+            "description": "ETS metric label describing the type of data in the value column (e.g. '2.1 EU-ETS Verified Emission', '1.1 Freely allocated allowances', '1.3 Allowances auctioned or sold')"
           },
           {
             "name": "year",
             "type": "string",
-            "description": "Annual data mainly in YYYY format, but also may include stings Eg: Total 1st trading period (05-07)"
+            "description": "Reporting period — either a four-digit calendar year (e.g. 2013) or a named trading-period string (e.g. 'Total 1st trading period (05-07)')"
           },
           {
             "name": "value",
             "type": "number",
-            "description": "measure value"
+            "description": "Metric value in the units specified by the unit column"
           },
           {
             "name": "unit",
             "type": "string",
-            "description": "Unit of the measure value (in tonne of CO2-equ.)"
+            "description": "Unit of measurement: 'tonne of CO2 equ.' for emissions, 'units' for allowances"
           }
         ]
       }
