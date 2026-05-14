@@ -69,7 +69,7 @@ def process():
     country_lookup = build_country_lookup()
 
     print("Writing eu-ets.csv...")
-    ets_fields = ['country_code', 'country', 'main_activity_code', 'citl_information', 'year', 'value', 'unit']
+    ets_fields = ['country_code', 'country', 'main_activity_code', 'citl_information', 'year', 'value']
     with open('data/eu-ets.csv', 'w', newline='') as f_out:
         writer = csv.DictWriter(f_out, fieldnames=ets_fields, lineterminator='\n')
         writer.writeheader()
@@ -82,7 +82,6 @@ def process():
                 'citl_information': row[col['citl_information']],
                 'year': row[col['year']],
                 'value': row[col['value']],
-                'unit': row[col['unit']],
             })
 
     print("Writing eu-ets-sector-emissions.csv...")

@@ -136,12 +136,7 @@
           {
             "name": "value",
             "type": "number",
-            "description": "Metric value in the units specified by the unit column"
-          },
-          {
-            "name": "unit",
-            "type": "string",
-            "description": "Unit of measurement: 'tonne of CO2 equ.' for emissions, 'units' for allowances"
+            "description": "Metric value — tonnes of CO₂ equivalent for emission rows, number of allowances (EUAs/EUAAs) for allocation and surrender rows"
           }
         ]
       }
