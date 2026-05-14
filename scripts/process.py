@@ -10,17 +10,42 @@ SOURCE_URL = "https://sdi.eea.europa.eu/datashare/s/b9SGaYerAH3HyX9/download"
 COUNTRY_CODES_URL = "https://raw.githubusercontent.com/datasets/country-codes/main/data/country-codes.csv"
 ZIP_FILE = "data.zip"
 
-# Full sector names for the 8 sectors included in eu-ets-sector-emissions.csv
-SECTOR_NAMES = {
-    '10': '10 Aviation',
-    '20': '20 Combustion of fuels',
-    '21': '21 Refining of mineral oil',
-    '24': '24 Production of pig iron or steel',
-    '29': '29 Production of cement clinker',
-    '30': '30 Production of lime, or calcination of dolomite/magnesite',
-    '36': '36 Production of paper or cardboard',
-    '42': '42 Production of bulk chemicals',
+# Activity codes defined in Annex I of EU Directive 2003/87/EC
+ACTIVITY_CODES = {
+    '10':    '10 Aviation',
+    '20':    '20 Combustion of fuels',
+    '21':    '21 Refining of mineral oil',
+    '22':    '22 Production of coke',
+    '23':    '23 Metal ore roasting or sintering',
+    '24':    '24 Production of pig iron or steel',
+    '25':    '25 Production or processing of ferrous metals',
+    '26':    '26 Production of primary aluminium',
+    '27':    '27 Production of secondary aluminium',
+    '28':    '28 Production or processing of non-ferrous metals',
+    '29':    '29 Production of cement clinker',
+    '30':    '30 Production of lime, or calcination of dolomite/magnesite',
+    '31':    '31 Manufacture of glass',
+    '32':    '32 Manufacture of ceramics',
+    '33':    '33 Manufacture of mineral wool',
+    '34':    '34 Production or processing of gypsum or plasterboard',
+    '35':    '35 Production of pulp',
+    '36':    '36 Production of paper or cardboard',
+    '37':    '37 Production of carbon black',
+    '38':    '38 Production of nitric acid',
+    '39':    '39 Production of adipic acid',
+    '40':    '40 Production of glyoxal and glyoxylic acid',
+    '41':    '41 Production of ammonia',
+    '42':    '42 Production of bulk chemicals',
+    '43':    '43 Production of hydrogen and synthesis gas',
+    '44':    '44 Production of soda ash and sodium bicarbonate',
+    '45':    '45 Capture of greenhouse gases under Directive 2009/31/EC',
+    '99':    '99 Other activity opted-in under Art. 24',
+    '20-99': '20-99 All stationary installations',
+    '21-99': '21-99 All industrial installations (excl. combustion)',
 }
+
+# The 8 sectors included in eu-ets-sector-emissions.csv
+TOP_SECTOR_CODES = ['10', '20', '21', '24', '29', '30', '36', '42']
 
 # Names for non-ISO country_code values used in the ETS dataset
 FALLBACK_NAMES = {
@@ -91,19 +116,27 @@ def process():
         citl = row[col['citl_information']]
         year = row[col['year']]
         value = row[col['value']]
-        if citl == '2.1 EU-ETS Verified Emission' and isinstance(year, int) and code in SECTOR_NAMES:
+        if citl == '2.1 EU-ETS Verified Emission' and isinstance(year, int) and code in TOP_SECTOR_CODES:
             sector_emissions[(code, year)] += value or 0
 
     with open('data/eu-ets-sector-emissions.csv', 'w', newline='') as f_out:
         writer = csv.DictWriter(f_out, fieldnames=['sector', 'year', 'emissions_mt'], lineterminator='\n')
         writer.writeheader()
-        for code, name in SECTOR_NAMES.items():
+        for code in TOP_SECTOR_CODES:
+            name = ACTIVITY_CODES[code]
             for year in sorted(y for (c, y) in sector_emissions if c == code):
                 writer.writerow({
                     'sector': name,
                     'year': year,
                     'emissions_mt': round(sector_emissions[(code, year)] / 1e6, 2),
                 })
+
+    print("Writing eu-ets-activity-codes.csv...")
+    with open('data/eu-ets-activity-codes.csv', 'w', newline='') as f_out:
+        writer = csv.DictWriter(f_out, fieldnames=['code', 'name'], lineterminator='\n')
+        writer.writeheader()
+        for code, name in ACTIVITY_CODES.items():
+            writer.writerow({'code': code, 'name': name})
 
     print("Done.")
 
