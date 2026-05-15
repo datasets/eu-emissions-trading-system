@@ -75,27 +75,6 @@
   ],
   "resources": [
     {
-      "name": "eu-ets-activity-codes",
-      "path": "data/eu-ets-activity-codes.csv",
-      "format": "csv",
-      "mediatype": "text/csv",
-      "description": "Lookup table mapping ETS main activity sector codes to their full names, as defined in Annex I of EU Directive 2003/87/EC. Join on main_activity_code in the eu-ets resource.",
-      "schema": {
-        "fields": [
-          {
-            "name": "code",
-            "type": "string",
-            "description": "ETS main activity sector code (e.g. '20', '20-99')"
-          },
-          {
-            "name": "name",
-            "type": "string",
-            "description": "Full sector name corresponding to the code (e.g. '20 Combustion of fuels')"
-          }
-        ]
-      }
-    },
-    {
       "name": "eu-ets-sector-emissions",
       "path": "data/eu-ets-sector-emissions.csv",
       "format": "csv",
@@ -142,7 +121,12 @@
           {
             "name": "main_activity_code",
             "type": "string",
-            "description": "ETS main activity sector code (e.g. 20 = Combustion of fuels, 21 = Refining of mineral oil, 29 = Production of cement clinker). Aggregate codes ending in -99 (e.g. 20-99) cover multiple sectors."
+            "description": "ETS main activity sector code as defined in Annex I of Directive 2003/87/EC (e.g. '20', '29'). Aggregate codes ending in -99 (e.g. '20-99' = all stationary installations, '21-99' = all industrial excl. combustion) are rollup rows that double-count individual sector rows."
+          },
+          {
+            "name": "main_activity_name",
+            "type": "string",
+            "description": "Full sector name corresponding to main_activity_code (e.g. '20 Combustion of fuels', '29 Production of cement clinker')"
           },
           {
             "name": "citl_information",

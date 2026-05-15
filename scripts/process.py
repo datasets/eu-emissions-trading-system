@@ -94,16 +94,18 @@ def process():
     country_lookup = build_country_lookup()
 
     print("Writing eu-ets.csv...")
-    ets_fields = ['country_code', 'country', 'main_activity_code', 'citl_information', 'year', 'value']
+    ets_fields = ['country_code', 'country', 'main_activity_code', 'main_activity_name', 'citl_information', 'year', 'value']
     with open('data/eu-ets.csv', 'w', newline='') as f_out:
         writer = csv.DictWriter(f_out, fieldnames=ets_fields, lineterminator='\n')
         writer.writeheader()
         for row in data:
             country_code = row[col['country_code']]
+            code = row[col['main_activity_code']]
             writer.writerow({
                 'country_code': country_code,
                 'country': country_lookup.get(country_code, country_code),
-                'main_activity_code': row[col['main_activity_code']],
+                'main_activity_code': code,
+                'main_activity_name': ACTIVITY_CODES.get(code, code),
                 'citl_information': row[col['citl_information']],
                 'year': row[col['year']],
                 'value': row[col['value']],
@@ -130,13 +132,6 @@ def process():
                     'year': year,
                     'emissions_mt': round(sector_emissions[(code, year)] / 1e6, 2),
                 })
-
-    print("Writing eu-ets-activity-codes.csv...")
-    with open('data/eu-ets-activity-codes.csv', 'w', newline='') as f_out:
-        writer = csv.DictWriter(f_out, fieldnames=['code', 'name'], lineterminator='\n')
-        writer.writeheader()
-        for code, name in ACTIVITY_CODES.items():
-            writer.writerow({'code': code, 'name': name})
 
     print("Done.")
 
