@@ -7,7 +7,6 @@ import openpyxl
 from collections import defaultdict
 
 SOURCE_URL = "https://sdi.eea.europa.eu/datashare/s/b9SGaYerAH3HyX9/download"
-COUNTRY_CODES_URL = "https://raw.githubusercontent.com/datasets/country-codes/main/data/country-codes.csv"
 ZIP_FILE = "data.zip"
 
 # Activity codes defined in Annex I of EU Directive 2003/87/EC
@@ -47,29 +46,6 @@ ACTIVITY_CODES = {
 # The 8 sectors included in eu-ets-sector-emissions.csv
 TOP_SECTOR_CODES = ['10', '20', '21', '24', '29', '30', '36', '42']
 
-# Names for non-ISO country_code values used in the ETS dataset
-FALLBACK_NAMES = {
-    'XI': 'Northern Ireland',
-    'Innovation fund': 'Innovation fund',
-    'Modernisation Fund': 'Modernisation Fund',
-    'NER 300 auctions': 'NER 300 auctions',
-    'RRF': 'Recovery and Resilience Facility',
-}
-
-
-def build_country_lookup():
-    resp = requests.get(COUNTRY_CODES_URL)
-    resp.raise_for_status()
-    lookup = {}
-    for row in csv.DictReader(io.StringIO(resp.text)):
-        code = row['ISO3166-1-Alpha-2'].strip()
-        name = row['official_name_en'].strip()
-        if code and name:
-            lookup[code] = name
-    lookup.update(FALLBACK_NAMES)
-    return lookup
-
-
 def process():
     print("Downloading EU ETS data...")
     resp = requests.get(SOURCE_URL)
@@ -90,20 +66,15 @@ def process():
     data = rows[1:]
     print(f"Read {len(data)} data rows.")
 
-    print("Fetching country names...")
-    country_lookup = build_country_lookup()
-
     print("Writing eu-ets.csv...")
-    ets_fields = ['country_code', 'country', 'main_activity_code', 'main_activity_name', 'citl_information', 'year', 'value']
+    ets_fields = ['country_code', 'main_activity_code', 'main_activity_name', 'citl_information', 'year', 'value']
     with open('data/eu-ets.csv', 'w', newline='') as f_out:
         writer = csv.DictWriter(f_out, fieldnames=ets_fields, lineterminator='\n')
         writer.writeheader()
         for row in data:
-            country_code = row[col['country_code']]
             code = row[col['main_activity_code']]
             writer.writerow({
-                'country_code': country_code,
-                'country': country_lookup.get(country_code, country_code),
+                'country_code': row[col['country_code']],
                 'main_activity_code': code,
                 'main_activity_name': ACTIVITY_CODES.get(code, code),
                 'citl_information': row[col['citl_information']],

@@ -17,11 +17,6 @@
       "path": "https://www.eea.europa.eu/en/datahub/datahubitem-view/98f04097-26de-4fca-86c4-63834818c0c0",
       "title": "EU ETS data from EUTL (European Environment Agency)"
     },
-    {
-      "name": "Country codes",
-      "path": "https://github.com/datasets/country-codes",
-      "title": "Country codes (used to map ISO 3166-1 alpha-2 codes to country names)"
-    }
   ],
   "views": [
     {
@@ -105,18 +100,13 @@
       "path": "data/eu-ets.csv",
       "format": "csv",
       "mediatype": "text/csv",
-      "description": "Country- and sector-level EU ETS data from the EU Transaction Log (EUTL) via the European Environment Agency. Each row reports a single ETS metric (e.g. verified emissions, freely allocated allowances) for one country, activity sector, and time period. The `year` field contains both four-digit calendar years (e.g. `2013`) and named trading-period strings (e.g. `Total 1st trading period (05-07)`). Country names are resolved from ISO 3166-1 alpha-2 codes using the country-codes dataset; non-country rows (EU-level funds and mechanisms) use descriptive names.",
+      "description": "Country- and sector-level EU ETS data from the EU Transaction Log (EUTL) via the European Environment Agency. Each row reports a single ETS metric (e.g. verified emissions, freely allocated allowances) for one country, activity sector, and time period. The `year` field contains both four-digit calendar years (e.g. `2013`) and named trading-period strings (e.g. `Total 1st trading period (05-07)`).",
       "schema": {
         "fields": [
           {
             "name": "country_code",
             "type": "string",
             "description": "ISO 3166-1 alpha-2 country code, or a special ETS administrative code for EU-level mechanisms (XI = Northern Ireland, Innovation fund, Modernisation Fund, NER 300 auctions, RRF)"
-          },
-          {
-            "name": "country",
-            "type": "string",
-            "description": "Country name in English, or the name of the EU-level administrative mechanism for non-country rows"
           },
           {
             "name": "main_activity_code",
