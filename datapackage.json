@@ -21,7 +21,7 @@
   "views": [
     {
       "name": "sector-emissions-trajectory",
-      "title": "EU ETS Emissions by Sector (2005–2024)",
+      "title": "EU ETS Emissions by Sector (2005–2025)",
       "description": "Verified greenhouse gas emissions for the top 8 industrial sectors in the EU Emissions Trading System. Combustion of fuels dominates at over 1 Gt/yr but has fallen ~35% since 2008. Other sectors — cement, steel, refining — each contribute 20–150 Mt and show similar declining trends since Phase III tightening began in 2013.",
       "resources": ["eu-ets-sector-emissions"],
       "specType": "plot",
@@ -100,43 +100,38 @@
       "path": "data/eu-ets.csv",
       "format": "csv",
       "mediatype": "text/csv",
-      "description": "Country- and sector-level EU ETS data downloaded from the EU Transaction Log (EUTL) via the European Environment Agency. Each row reports a single ETS metric (e.g. verified emissions, freely allocated allowances) for one country, activity sector, and time period. The `year` field contains both four-digit calendar years (e.g. `2013`) and named trading-period strings (e.g. `Total 1st trading period (05-07)`).",
+      "description": "Country- and sector-level EU ETS data from the EU Transaction Log (EUTL) via the European Environment Agency. Each row reports a single ETS metric (e.g. verified emissions, freely allocated allowances) for one country, activity sector, and time period. The `year` field contains both four-digit calendar years (e.g. `2013`) and named trading-period strings (e.g. `Total 1st trading period (05-07)`).",
       "schema": {
         "fields": [
           {
             "name": "country_code",
             "type": "string",
-            "description": "International Country Code (ISO 3166-1-Alpha-2 code elements)"
+            "description": "ISO 3166-1 alpha-2 country code, or a special ETS administrative code for EU-level mechanisms (XI = Northern Ireland, Innovation fund, Modernisation Fund, NER 300 auctions, RRF)"
           },
           {
-            "name": "country",
+            "name": "main_activity_code",
             "type": "string",
-            "description": "Country name"
+            "description": "ETS main activity sector code as defined in Annex I of Directive 2003/87/EC (e.g. '20', '29'). Aggregate codes ending in -99 (e.g. '20-99' = all stationary installations, '21-99' = all industrial excl. combustion) are rollup rows that double-count individual sector rows."
           },
           {
-            "name": "main activity sector name",
+            "name": "main_activity_name",
             "type": "string",
-            "description": "Main activity label"
+            "description": "Full sector name corresponding to main_activity_code (e.g. '20 Combustion of fuels', '29 Production of cement clinker')"
           },
           {
-            "name": "ETS information",
+            "name": "citl_information",
             "type": "string",
-            "description": "ETS information"
+            "description": "ETS metric label describing the type of data in the value column (e.g. '2.1 EU-ETS Verified Emission', '1.1 Freely allocated allowances', '1.3 Allowances auctioned or sold')"
           },
           {
             "name": "year",
             "type": "string",
-            "description": "Annual data mainly in YYYY format, but also may include stings Eg: Total 1st trading period (05-07)"
+            "description": "Reporting period — either a four-digit calendar year (e.g. 2013) or a named trading-period string (e.g. 'Total 1st trading period (05-07)')"
           },
           {
             "name": "value",
             "type": "number",
-            "description": "measure value"
-          },
-          {
-            "name": "unit",
-            "type": "string",
-            "description": "Unit of the measure value (in tonne of CO2-equ.)"
+            "description": "Metric value — tonnes of CO₂ equivalent for emission rows, number of allowances (EUAs/EUAAs) for allocation and surrender rows"
           }
         ]
       }

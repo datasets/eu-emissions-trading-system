@@ -12,7 +12,7 @@ Austria, Belgium, Bulgaria, Croatia, Cyprus, Czech Republic, Denmark, Estonia, F
 
 ### Temporal coverage
 
-2005-2024
+2005-2025
 
 ### Sources
 
@@ -24,7 +24,7 @@ Austria, Belgium, Bulgaria, Croatia, Cyprus, Czech Republic, Denmark, Estonia, F
 
 ### Requirements
 
-Python 3 with modules requests  are required in order to process the data. 
+Python 3 with modules `requests` and `openpyxl` are required in order to process the data.
 
 ### Processing
 
