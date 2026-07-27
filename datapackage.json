@@ -137,5 +137,9 @@
       }
     }
   ],
-  "collection": "air-pollution"
+  "collection": "air-pollution",
+  "has_solutions": [
+    "global-country-region-reference-data",
+    "logistics"
+  ]
 }
